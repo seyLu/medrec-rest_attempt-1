@@ -1,0 +1,11 @@
+[
+  {
+    "model": "regions.city",
+    "pk": "1",
+    "fields": {
+      "province_code": "0831600000",
+      "name": "Barangay 93",
+      "code": "0831600000"
+    }
+  }
+]

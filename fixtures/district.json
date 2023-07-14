@@ -1,0 +1,11 @@
+[
+  {
+    "model": "regions.district",
+    "pk": "1",
+    "fields": {
+      "city_code": "0831600000",
+      "name": "City of Tacloban",
+      "code": "0831600127"
+    }
+  }
+]

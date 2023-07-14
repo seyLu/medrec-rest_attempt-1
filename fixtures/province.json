@@ -1,0 +1,10 @@
+[
+  {
+    "model": "regions.province",
+    "pk": "1",
+    "fields": {
+      "name": "City of Tacloban",
+      "code": "0831600000"
+    }
+  }
+]
