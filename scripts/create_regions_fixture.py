@@ -19,8 +19,9 @@ for each provinces
                 take code
 """
 
-import requests
 import json
+
+import requests
 
 REGION_VIII_CODE = "080000000"
 CITY_OF_TACLOBAN_CODE = "0831600000"
@@ -63,7 +64,9 @@ city_of_tacloban_res = requests.get(city_of_tacloban_endpoint)
 city_set.add(city_of_tacloban_res)
 
 city_of_tacloban_districts_endpoint = f"{city_of_tacloban_endpoint}/barangays"
-city_of_tacloban_districts_json = requests.get(city_of_tacloban_districts_endpoint).json()
+city_of_tacloban_districts_json = requests.get(
+    city_of_tacloban_districts_endpoint
+).json()
 
 for district in city_of_tacloban_districts_json:
     district_endpoint = f"{base_url}/barangays/{district['code']}"
