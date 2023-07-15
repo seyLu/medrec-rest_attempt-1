@@ -1,14 +1,23 @@
 from django.db import models
 
-# Create your models here.
 
-
-class Province(models.Model):
+class Region(models.Model):
     name = models.CharField(max_length=255)
     code = models.CharField(max_length=10, unique=True)
 
     def __str__(self):
-        return f"(name={self.name}, code={self.code})"
+        return f"Region(name={self.name}, code={self.code})"
+
+
+class Province(models.Model):
+    region_code = models.ForeignKey(
+        Region, to_field="code", on_delete=models.CASCADE, default="0800000000"
+    )
+    name = models.CharField(max_length=255)
+    code = models.CharField(max_length=10, unique=True)
+
+    def __str__(self):
+        return f"Province(name={self.name}, code={self.code})"
 
 
 class City(models.Model):
@@ -19,7 +28,7 @@ class City(models.Model):
     code = models.CharField(max_length=10, unique=True)
 
     def __str__(self):
-        return f"(name={self.name}, code={self.code})"
+        return f"City(name={self.name}, code={self.code})"
 
 
 class District(models.Model):
@@ -30,4 +39,4 @@ class District(models.Model):
     code = models.CharField(max_length=10, unique=True)
 
     def __str__(self):
-        return f"(name={self.name}, code={self.code})"
+        return f"District(name={self.name}, code={self.code})"
