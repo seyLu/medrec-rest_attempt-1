@@ -10,8 +10,10 @@ __version__ = "0.0.1"
 __maintainer__ = "seyLu"
 __status__ = "Prototype"
 
+import logging
 import os
 import subprocess
+from logging.config import fileConfig
 
 FIXTURE_PATH = "fixtures/"
 
@@ -23,17 +25,19 @@ LOADDATA_COMMAND = [
 
 
 def main():
-    loaddata("region")
-    loaddata("province")
-    loaddata("city")
-    loaddata("district")
+    loaddata(["region", "province", "city", "district"])
 
 
-def loaddata(fixture: str) -> None:
-    """Loads fixture."""
+def loaddata(fixtures: str) -> None:
+    """Loads all fixtures in order."""
 
-    subprocess.call([*LOADDATA_COMMAND, os.path.join(FIXTURE_PATH, f"{fixture}.json")])
+    for fixture in fixtures:
+        fixture = f"{fixture}.json"
+        logging.info(f"Loading fixture {fixture}.")
+
+        subprocess.call([*LOADDATA_COMMAND, os.path.join(FIXTURE_PATH, fixture)])
 
 
 if __name__ == "__main__":
+    fileConfig("logging.ini")
     main()
