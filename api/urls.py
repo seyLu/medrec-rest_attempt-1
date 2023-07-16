@@ -4,5 +4,5 @@ from . import views
 
 urlpatterns = [
     path("", views.api_home),
-    path("regions/", include("regions.urls")),
+    path("", include("regions.urls")),
 ]
