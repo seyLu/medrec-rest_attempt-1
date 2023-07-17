@@ -32,6 +32,7 @@ __status__ = "Prototype"
 import asyncio
 import json
 
+import aiohttp
 import requests
 
 REGION_VIII_CODE = "080000000"
@@ -58,15 +59,16 @@ FIXTURE_JSON_MAP = {
 
 
 async def main():
-    regions, province_codes = await get_regions()
-    # provinces, city_codes = get_provinces(province_codes)
-    # cities, district_codes = get_cities(city_codes)
-    # districts = get_districts(district_codes)
+    async with aiohttp.ClientSession() as session:
+        regions, province_codes = await get_regions(session)
+        # provinces, city_codes = get_provinces(session, province_codes)
+        # cities, district_codes = get_cities(session, city_codes)
+        # districts = get_districts(session, district_codes)
 
-    print(f"{regions=}\n{province_codes=}")
+        print(f"{regions=}\n{province_codes=}")
 
 
-async def get_regions(codes: list[str] | None = None) -> tuple:
+async def get_regions(session, codes: list[str] | None = None) -> tuple:
     """Get all regions or select regions from api."""
 
     regions: list[dict]
@@ -77,12 +79,17 @@ async def get_regions(codes: list[str] | None = None) -> tuple:
     BASE_ENDPOINT: str = f"{BASE_URL}/regions"
 
     if not codes:
-        regions = requests.get(BASE_ENDPOINT).json()
-        codes = [region["code"] for region in regions]
+        async with session.get(f"{BASE_ENDPOINT}.json") as response:
+            regions = await response.json()
+            codes = [region["code"] for region in regions]
 
     for pk, code in enumerate(codes, start=1):
         fixture, province_code_list = await get_region(
-            BASE_ENDPOINT=BASE_ENDPOINT, MODEL_NAME=MODEL_NAME, code=code, pk=pk
+            session=session,
+            BASE_ENDPOINT=BASE_ENDPOINT,
+            MODEL_NAME=MODEL_NAME,
+            code=code,
+            pk=pk,
         )
 
         fixtures.append(fixture)
@@ -91,24 +98,26 @@ async def get_regions(codes: list[str] | None = None) -> tuple:
     return fixtures, province_codes
 
 
-async def get_region(BASE_ENDPOINT, MODEL_NAME, code, pk):
+async def get_region(session, BASE_ENDPOINT, MODEL_NAME, code, pk):
     """Get a single region from api."""
 
     endpoint = f"{BASE_ENDPOINT}/{code}"
-    region = requests.get(endpoint).json()
+    async with session.get(f"{endpoint}.json") as response:
+        region = await response.json()
 
-    fixture = {
-        "model": MODEL_NAME,
-        "pk": pk,
-        "fields": {
-            "name": region["name"],
-            "code": region["code"],
-        },
-    }
+        fixture = {
+            "model": MODEL_NAME,
+            "pk": pk,
+            "fields": {
+                "name": region["name"],
+                "code": region["code"],
+            },
+        }
 
     provinces_endpoint = f"{endpoint}/provinces"
-    provinces = requests.get(provinces_endpoint).json()
-    province_code_list = [province["code"] for province in provinces]
+    async with session.get(f"{provinces_endpoint}.json") as response:
+        provinces = await response.json()
+        province_code_list = [province["code"] for province in provinces]
 
     return fixture, province_code_list
 
