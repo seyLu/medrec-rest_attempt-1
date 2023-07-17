@@ -30,10 +30,11 @@ __maintainer__ = "seyLu"
 __status__ = "Prototype"
 
 import asyncio
-import json
+import itertools
+import logging
+from logging.config import fileConfig
 
 import aiohttp
-import requests
 
 REGION_VIII_CODE = "080000000"
 CITY_OF_TACLOBAN_CODE = "083747000"
@@ -48,141 +49,127 @@ API_MAP = {
     "districts": "barangays",
 }
 
-FIXTURE_JSON_MAP = {
-    "model": None,
-    "pk": None,
-    "fields": {
-        "name": None,
-        "code": None,
-    },
+API_CHILD_MAP = {
+    "regions": "provinces",
+    "provinces": "cities",
+    "cities": "districts",
+    "districts": None,
 }
+
+API_PARENT_MAP = {
+    "regions": None,
+    "provinces": "regions",
+    "cities": "provinces",
+    "districts": "cities",
+}
+
+
+class PsgcAPI:
+    def __init__(self, endpoint):
+        self.base_endpoint: str = f"{BASE_URL}/{API_MAP[endpoint]}"
+        self.child_endpoint: str | None = API_MAP.get(API_CHILD_MAP[endpoint])
+        self.parent: str = API_PARENT_MAP[endpoint]
+        self.model_name: str = f"regions.{endpoint}"
+        self.items: list[dict] = []
+        self.fixtures: list[dict] = []
+        self.parent_child_codes: list[tuple[str, str]] = []
+
+    async def list(
+        self, session, parent_child_codes: list[tuple[str, str]] | None = None
+    ):
+        """Get all json items or select json items from api."""
+
+        parent_codes: list[str] | None = None
+
+        if not parent_child_codes:
+            async with session.get(f"{self.base_endpoint}.json") as response:
+                logging.info(f"Requesting {response.url}.")
+                items = await response.json()
+                codes = [item["code"] for item in items]
+        else:
+            parent_codes, codes = zip(*parent_child_codes)
+
+        for pk, code in enumerate(codes, start=1):
+            endpoint = f"{self.base_endpoint}/{code}"
+            async with session.get(f"{endpoint}.json") as response:
+                logging.info(f"Requesting {response.url}.")
+                item = await response.json()
+
+                fixture = {
+                    "model": self.model_name,
+                    "pk": pk,
+                    "fields": {
+                        "name": item["name"],
+                        "code": item["code"],
+                    },
+                }
+
+                if parent_codes:
+                    if parent_code := parent_codes[pk - 1]:
+                        fixture["fields"][f"{self.parent}_code"] = parent_code
+
+                self.fixtures.append(fixture)
+
+        return self.fixtures
+
+    async def list_child_codes(self, session, code: str):
+        """List child item codes."""
+
+        endpoint = f"{self.base_endpoint}/{code}"
+        child_endpoint = f"{endpoint}/{self.child_endpoint}"
+        async with session.get(f"{child_endpoint}.json") as response:
+            logging.info(f"Requesting {response.url}.")
+            child_items = await response.json()
+
+            self.parent_child_codes = list(
+                zip(
+                    itertools.repeat(code),
+                    [child_item["code"] for child_item in child_items],
+                )
+            )
+
+        return self.parent_child_codes
 
 
 async def main():
     async with aiohttp.ClientSession() as session:
-        regions, province_codes = await get_regions(session)
-        # provinces, city_codes = get_provinces(session, province_codes)
-        # cities, district_codes = get_cities(session, city_codes)
-        # districts = get_districts(session, district_codes)
+        regions_obj = PsgcAPI("regions")
+        provinces_obj = PsgcAPI("provinces")
+        cities_obj = PsgcAPI("cities")
+        districts_obj = PsgcAPI("districts")
 
-        print(f"{regions=}\n{province_codes=}")
+        region_fixtures = await regions_obj.list(session, [(None, REGION_VIII_CODE)])
+        region_province_codes = [
+            region_province_code
+            for region_fixture in region_fixtures
+            for region_province_code in await regions_obj.list_child_codes(
+                session, region_fixture["fields"]["code"]
+            )
+        ]
 
+        province_fixtures = await provinces_obj.list(session, region_province_codes)
+        province_city_codes = [
+            province_city_code
+            for province_fixture in province_fixtures
+            for province_city_code in await provinces_obj.list_child_codes(
+                session, province_fixture["fields"]["code"]
+            )
+        ]
 
-async def get_regions(session, codes: list[str] | None = None) -> tuple:
-    """Get all regions or select regions from api."""
+        city_fixtures = await cities_obj.list(session, province_city_codes)
+        city_district_codes = [
+            city_district_code
+            for city_fixture in city_fixtures
+            for city_district_code in await cities_obj.list_child_codes(
+                session, city_fixture["fields"]["code"]
+            )
+        ]
 
-    regions: list[dict]
-    fixtures: list[dict] = []
-    province_codes: list[str] = []
+        district_fixtures = await districts_obj.list(session, city_district_codes)
 
-    MODEL_NAME: str = "regions.region"
-    BASE_ENDPOINT: str = f"{BASE_URL}/regions"
-
-    if not codes:
-        async with session.get(f"{BASE_ENDPOINT}.json") as response:
-            regions = await response.json()
-            codes = [region["code"] for region in regions]
-
-    for pk, code in enumerate(codes, start=1):
-        fixture, province_code_list = await get_region(
-            session=session,
-            BASE_ENDPOINT=BASE_ENDPOINT,
-            MODEL_NAME=MODEL_NAME,
-            code=code,
-            pk=pk,
-        )
-
-        fixtures.append(fixture)
-        province_codes.extend(province_code_list)
-
-    return fixtures, province_codes
-
-
-async def get_region(session, BASE_ENDPOINT, MODEL_NAME, code, pk):
-    """Get a single region from api."""
-
-    endpoint = f"{BASE_ENDPOINT}/{code}"
-    async with session.get(f"{endpoint}.json") as response:
-        region = await response.json()
-
-        fixture = {
-            "model": MODEL_NAME,
-            "pk": pk,
-            "fields": {
-                "name": region["name"],
-                "code": region["code"],
-            },
-        }
-
-    provinces_endpoint = f"{endpoint}/provinces"
-    async with session.get(f"{provinces_endpoint}.json") as response:
-        provinces = await response.json()
-        province_code_list = [province["code"] for province in provinces]
-
-    return fixture, province_code_list
-
-
-def _() -> None:
-    """@TODO."""
-
-    province_set = city_set = district_set = set()
-
-    region_endpoint = f"{BASE_URL}/regions/{REGION_VIII_CODE}"
-    region_res = requests.get(region_endpoint)
-
-    provinces_endpoint = f"{region_endpoint}/provinces"
-    provinces_json = requests.get(provinces_endpoint).json()
-
-    for province in provinces_json:
-        province_endpoint = f"{BASE_URL}/provinces/{province['code']}"
-        province_res = requests.get(province_endpoint)
-        province_set.add(province_res)
-
-        cities_endpoint = f"{province_endpoint}/cities-municipalities"
-        cities_json = requests.get(cities_endpoint).json()
-
-        for city in cities_json:
-            city_endpoint = f"{BASE_URL}/cities-municipalities/{city['code']}"
-            city_res = requests.get(city_endpoint)
-            city_set.add(city_res)
-
-            districts_endpoint = f"{city_endpoint}/barangays"
-            districts_json = requests.get(districts_endpoint).json()
-
-            for district in districts_json:
-                district_endpoint = f"{BASE_URL}/barangays/{district['code']}"
-                district_res = requests.get(district_endpoint)
-                district_set.add(district_res)
-
-    city_of_tacloban_endpoint = f"{BASE_URL}/cities/{CITY_OF_TACLOBAN_CODE}"
-    city_of_tacloban_res = requests.get(city_of_tacloban_endpoint)
-    city_set.add(city_of_tacloban_res)
-
-    city_of_tacloban_districts_endpoint = f"{city_of_tacloban_endpoint}/barangays"
-    city_of_tacloban_districts_json = requests.get(
-        city_of_tacloban_districts_endpoint
-    ).json()
-
-    for district in city_of_tacloban_districts_json:
-        district_endpoint = f"{BASE_URL}/barangays/{district['code']}"
-        district_res = requests.get(district_endpoint)
-        district_set.add(district_res)
-
-    with open(f"{BASE_PATH}/regions.txt", "w+") as f:
-        f.write(json.dumps(region_res.json(), indent=2))
-
-    with open(f"{BASE_PATH}/provinces.txt", "w+") as f:
-        for province in province_set:
-            f.write(json.dumps(province.json(), indent=2))
-
-    with open(f"{BASE_PATH}/cities.txt", "w+") as f:
-        for city in city_set:
-            f.write(json.dumps(city.json(), indent=2))
-
-    with open(f"{BASE_PATH}/districts.txt", "w+") as f:
-        for district in district_set:
-            f.write(json.dumps(district.json(), indent=2))
+        print(f"{district_fixtures=}")
 
 
 if __name__ == "__main__":
+    fileConfig("logging.ini")
     asyncio.run(main())
