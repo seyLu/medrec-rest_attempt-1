@@ -1,0 +1,1002 @@
+- model: regions.city
+  pk: 1
+  fields:
+    code: 082601000
+    name: Arteche
+    region_code: 080000000
+    province_code: 082600000
+- model: regions.city
+  pk: 2
+  fields:
+    code: 082602000
+    name: Balangiga
+    region_code: 080000000
+    province_code: 082600000
+- model: regions.city
+  pk: 3
+  fields:
+    code: 082603000
+    name: Balangkayan
+    region_code: 080000000
+    province_code: 082600000
+- model: regions.city
+  pk: 4
+  fields:
+    code: 082604000
+    name: City of Borongan
+    region_code: 080000000
+    province_code: 082600000
+- model: regions.city
+  pk: 5
+  fields:
+    code: 082605000
+    name: Can-Avid
+    region_code: 080000000
+    province_code: 082600000
+- model: regions.city
+  pk: 6
+  fields:
+    code: 082606000
+    name: Dolores
+    region_code: 080000000
+    province_code: 082600000
+- model: regions.city
+  pk: 7
+  fields:
+    code: 082607000
+    name: General Macarthur
+    region_code: 080000000
+    province_code: 082600000
+- model: regions.city
+  pk: 8
+  fields:
+    code: 082608000
+    name: Giporlos
+    region_code: 080000000
+    province_code: 082600000
+- model: regions.city
+  pk: 9
+  fields:
+    code: 082609000
+    name: Guiuan
+    region_code: 080000000
+    province_code: 082600000
+- model: regions.city
+  pk: 10
+  fields:
+    code: 082610000
+    name: Hernani
+    region_code: 080000000
+    province_code: 082600000
+- model: regions.city
+  pk: 11
+  fields:
+    code: 082611000
+    name: Jipapad
+    region_code: 080000000
+    province_code: 082600000
+- model: regions.city
+  pk: 12
+  fields:
+    code: 082612000
+    name: Lawaan
+    region_code: 080000000
+    province_code: 082600000
+- model: regions.city
+  pk: 13
+  fields:
+    code: 082613000
+    name: Llorente
+    region_code: 080000000
+    province_code: 082600000
+- model: regions.city
+  pk: 14
+  fields:
+    code: 082614000
+    name: Maslog
+    region_code: 080000000
+    province_code: 082600000
+- model: regions.city
+  pk: 15
+  fields:
+    code: 082615000
+    name: Maydolong
+    region_code: 080000000
+    province_code: 082600000
+- model: regions.city
+  pk: 16
+  fields:
+    code: 082616000
+    name: Mercedes
+    region_code: 080000000
+    province_code: 082600000
+- model: regions.city
+  pk: 17
+  fields:
+    code: 082617000
+    name: Oras
+    region_code: 080000000
+    province_code: 082600000
+- model: regions.city
+  pk: 18
+  fields:
+    code: 082618000
+    name: Quinapondan
+    region_code: 080000000
+    province_code: 082600000
+- model: regions.city
+  pk: 19
+  fields:
+    code: 082619000
+    name: Salcedo
+    region_code: 080000000
+    province_code: 082600000
+- model: regions.city
+  pk: 20
+  fields:
+    code: 082620000
+    name: San Julian
+    region_code: 080000000
+    province_code: 082600000
+- model: regions.city
+  pk: 21
+  fields:
+    code: 082621000
+    name: San Policarpo
+    region_code: 080000000
+    province_code: 082600000
+- model: regions.city
+  pk: 22
+  fields:
+    code: 082622000
+    name: Sulat
+    region_code: 080000000
+    province_code: 082600000
+- model: regions.city
+  pk: 23
+  fields:
+    code: 082623000
+    name: Taft
+    region_code: 080000000
+    province_code: 082600000
+- model: regions.city
+  pk: 24
+  fields:
+    code: 083701000
+    name: Abuyog
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 25
+  fields:
+    code: 083702000
+    name: Alangalang
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 26
+  fields:
+    code: 083703000
+    name: Albuera
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 27
+  fields:
+    code: 083705000
+    name: Babatngon
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 28
+  fields:
+    code: 083706000
+    name: Barugo
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 29
+  fields:
+    code: 083707000
+    name: Bato
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 30
+  fields:
+    code: 083708000
+    name: City of Baybay
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 31
+  fields:
+    code: 083710000
+    name: Burauen
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 32
+  fields:
+    code: 083713000
+    name: Calubian
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 33
+  fields:
+    code: 083714000
+    name: Capoocan
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 34
+  fields:
+    code: 083715000
+    name: Carigara
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 35
+  fields:
+    code: 083717000
+    name: Dagami
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 36
+  fields:
+    code: 083718000
+    name: Dulag
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 37
+  fields:
+    code: 083719000
+    name: Hilongos
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 38
+  fields:
+    code: 083720000
+    name: Hindang
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 39
+  fields:
+    code: 083721000
+    name: Inopacan
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 40
+  fields:
+    code: 083722000
+    name: Isabel
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 41
+  fields:
+    code: 083723000
+    name: Jaro
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 42
+  fields:
+    code: 083724000
+    name: Javier
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 43
+  fields:
+    code: 083725000
+    name: Julita
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 44
+  fields:
+    code: 083726000
+    name: Kananga
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 45
+  fields:
+    code: 083728000
+    name: La Paz
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 46
+  fields:
+    code: 083729000
+    name: Leyte
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 47
+  fields:
+    code: 083730000
+    name: Macarthur
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 48
+  fields:
+    code: 083731000
+    name: Mahaplag
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 49
+  fields:
+    code: 083733000
+    name: Matag-Ob
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 50
+  fields:
+    code: 083734000
+    name: Matalom
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 51
+  fields:
+    code: 083735000
+    name: Mayorga
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 52
+  fields:
+    code: 083736000
+    name: Merida
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 53
+  fields:
+    code: 083738000
+    name: Ormoc City
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 54
+  fields:
+    code: 083739000
+    name: Palo
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 55
+  fields:
+    code: 083740000
+    name: Palompon
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 56
+  fields:
+    code: 083741000
+    name: Pastrana
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 57
+  fields:
+    code: 083742000
+    name: San Isidro
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 58
+  fields:
+    code: 083743000
+    name: San Miguel
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 59
+  fields:
+    code: 083744000
+    name: Santa Fe
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 60
+  fields:
+    code: 083745000
+    name: Tabango
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 61
+  fields:
+    code: 083746000
+    name: Tabontabon
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 62
+  fields:
+    code: 083747000
+    name: City of Tacloban
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 63
+  fields:
+    code: 083748000
+    name: Tanauan
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 64
+  fields:
+    code: 083749000
+    name: Tolosa
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 65
+  fields:
+    code: 083750000
+    name: Tunga
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 66
+  fields:
+    code: 083751000
+    name: Villaba
+    region_code: 080000000
+    province_code: 083700000
+- model: regions.city
+  pk: 67
+  fields:
+    code: 084801000
+    name: Allen
+    region_code: 080000000
+    province_code: 084800000
+- model: regions.city
+  pk: 68
+  fields:
+    code: 084802000
+    name: Biri
+    region_code: 080000000
+    province_code: 084800000
+- model: regions.city
+  pk: 69
+  fields:
+    code: 084803000
+    name: Bobon
+    region_code: 080000000
+    province_code: 084800000
+- model: regions.city
+  pk: 70
+  fields:
+    code: 084804000
+    name: Capul
+    region_code: 080000000
+    province_code: 084800000
+- model: regions.city
+  pk: 71
+  fields:
+    code: 084805000
+    name: Catarman
+    region_code: 080000000
+    province_code: 084800000
+- model: regions.city
+  pk: 72
+  fields:
+    code: 084806000
+    name: Catubig
+    region_code: 080000000
+    province_code: 084800000
+- model: regions.city
+  pk: 73
+  fields:
+    code: 084807000
+    name: Gamay
+    region_code: 080000000
+    province_code: 084800000
+- model: regions.city
+  pk: 74
+  fields:
+    code: 084808000
+    name: Laoang
+    region_code: 080000000
+    province_code: 084800000
+- model: regions.city
+  pk: 75
+  fields:
+    code: 084809000
+    name: Lapinig
+    region_code: 080000000
+    province_code: 084800000
+- model: regions.city
+  pk: 76
+  fields:
+    code: 084810000
+    name: Las Navas
+    region_code: 080000000
+    province_code: 084800000
+- model: regions.city
+  pk: 77
+  fields:
+    code: 084811000
+    name: Lavezares
+    region_code: 080000000
+    province_code: 084800000
+- model: regions.city
+  pk: 78
+  fields:
+    code: 084812000
+    name: Mapanas
+    region_code: 080000000
+    province_code: 084800000
+- model: regions.city
+  pk: 79
+  fields:
+    code: 084813000
+    name: Mondragon
+    region_code: 080000000
+    province_code: 084800000
+- model: regions.city
+  pk: 80
+  fields:
+    code: 084814000
+    name: Palapag
+    region_code: 080000000
+    province_code: 084800000
+- model: regions.city
+  pk: 81
+  fields:
+    code: 084815000
+    name: Pambujan
+    region_code: 080000000
+    province_code: 084800000
+- model: regions.city
+  pk: 82
+  fields:
+    code: 084816000
+    name: Rosario
+    region_code: 080000000
+    province_code: 084800000
+- model: regions.city
+  pk: 83
+  fields:
+    code: 084817000
+    name: San Antonio
+    region_code: 080000000
+    province_code: 084800000
+- model: regions.city
+  pk: 84
+  fields:
+    code: 084818000
+    name: San Isidro
+    region_code: 080000000
+    province_code: 084800000
+- model: regions.city
+  pk: 85
+  fields:
+    code: 084819000
+    name: San Jose
+    region_code: 080000000
+    province_code: 084800000
+- model: regions.city
+  pk: 86
+  fields:
+    code: 084820000
+    name: San Roque
+    region_code: 080000000
+    province_code: 084800000
+- model: regions.city
+  pk: 87
+  fields:
+    code: 084821000
+    name: San Vicente
+    region_code: 080000000
+    province_code: 084800000
+- model: regions.city
+  pk: 88
+  fields:
+    code: 084822000
+    name: Silvino Lobos
+    region_code: 080000000
+    province_code: 084800000
+- model: regions.city
+  pk: 89
+  fields:
+    code: 084823000
+    name: Victoria
+    region_code: 080000000
+    province_code: 084800000
+- model: regions.city
+  pk: 90
+  fields:
+    code: 084824000
+    name: Lope De Vega
+    region_code: 080000000
+    province_code: 084800000
+- model: regions.city
+  pk: 91
+  fields:
+    code: 086001000
+    name: Almagro
+    region_code: 080000000
+    province_code: 086000000
+- model: regions.city
+  pk: 92
+  fields:
+    code: 086002000
+    name: Basey
+    region_code: 080000000
+    province_code: 086000000
+- model: regions.city
+  pk: 93
+  fields:
+    code: 086003000
+    name: City of Calbayog
+    region_code: 080000000
+    province_code: 086000000
+- model: regions.city
+  pk: 94
+  fields:
+    code: 086004000
+    name: Calbiga
+    region_code: 080000000
+    province_code: 086000000
+- model: regions.city
+  pk: 95
+  fields:
+    code: 086005000
+    name: City of Catbalogan
+    region_code: 080000000
+    province_code: 086000000
+- model: regions.city
+  pk: 96
+  fields:
+    code: 086006000
+    name: Daram
+    region_code: 080000000
+    province_code: 086000000
+- model: regions.city
+  pk: 97
+  fields:
+    code: 086007000
+    name: Gandara
+    region_code: 080000000
+    province_code: 086000000
+- model: regions.city
+  pk: 98
+  fields:
+    code: 086008000
+    name: Hinabangan
+    region_code: 080000000
+    province_code: 086000000
+- model: regions.city
+  pk: 99
+  fields:
+    code: 086009000
+    name: Jiabong
+    region_code: 080000000
+    province_code: 086000000
+- model: regions.city
+  pk: 100
+  fields:
+    code: 086010000
+    name: Marabut
+    region_code: 080000000
+    province_code: 086000000
+- model: regions.city
+  pk: 101
+  fields:
+    code: 086011000
+    name: Matuguinao
+    region_code: 080000000
+    province_code: 086000000
+- model: regions.city
+  pk: 102
+  fields:
+    code: 086012000
+    name: Motiong
+    region_code: 080000000
+    province_code: 086000000
+- model: regions.city
+  pk: 103
+  fields:
+    code: 086013000
+    name: Pinabacdao
+    region_code: 080000000
+    province_code: 086000000
+- model: regions.city
+  pk: 104
+  fields:
+    code: 086014000
+    name: San Jose De Buan
+    region_code: 080000000
+    province_code: 086000000
+- model: regions.city
+  pk: 105
+  fields:
+    code: 086015000
+    name: San Sebastian
+    region_code: 080000000
+    province_code: 086000000
+- model: regions.city
+  pk: 106
+  fields:
+    code: 086016000
+    name: Santa Margarita
+    region_code: 080000000
+    province_code: 086000000
+- model: regions.city
+  pk: 107
+  fields:
+    code: 086017000
+    name: Santa Rita
+    region_code: 080000000
+    province_code: 086000000
+- model: regions.city
+  pk: 108
+  fields:
+    code: 086018000
+    name: "Santo Ni\xF1o"
+    region_code: 080000000
+    province_code: 086000000
+- model: regions.city
+  pk: 109
+  fields:
+    code: 086019000
+    name: Talalora
+    region_code: 080000000
+    province_code: 086000000
+- model: regions.city
+  pk: 110
+  fields:
+    code: 086020000
+    name: Tarangnan
+    region_code: 080000000
+    province_code: 086000000
+- model: regions.city
+  pk: 111
+  fields:
+    code: 086021000
+    name: Villareal
+    region_code: 080000000
+    province_code: 086000000
+- model: regions.city
+  pk: 112
+  fields:
+    code: 086022000
+    name: Paranas
+    region_code: 080000000
+    province_code: 086000000
+- model: regions.city
+  pk: 113
+  fields:
+    code: 086023000
+    name: Zumarraga
+    region_code: 080000000
+    province_code: 086000000
+- model: regions.city
+  pk: 114
+  fields:
+    code: 086024000
+    name: Tagapul-An
+    region_code: 080000000
+    province_code: 086000000
+- model: regions.city
+  pk: 115
+  fields:
+    code: 086025000
+    name: San Jorge
+    region_code: 080000000
+    province_code: 086000000
+- model: regions.city
+  pk: 116
+  fields:
+    code: 086026000
+    name: Pagsanghan
+    region_code: 080000000
+    province_code: 086000000
+- model: regions.city
+  pk: 117
+  fields:
+    code: 086401000
+    name: Anahawan
+    region_code: 080000000
+    province_code: 086400000
+- model: regions.city
+  pk: 118
+  fields:
+    code: 086402000
+    name: Bontoc
+    region_code: 080000000
+    province_code: 086400000
+- model: regions.city
+  pk: 119
+  fields:
+    code: 086403000
+    name: Hinunangan
+    region_code: 080000000
+    province_code: 086400000
+- model: regions.city
+  pk: 120
+  fields:
+    code: 086404000
+    name: Hinundayan
+    region_code: 080000000
+    province_code: 086400000
+- model: regions.city
+  pk: 121
+  fields:
+    code: 086405000
+    name: Libagon
+    region_code: 080000000
+    province_code: 086400000
+- model: regions.city
+  pk: 122
+  fields:
+    code: 086406000
+    name: Liloan
+    region_code: 080000000
+    province_code: 086400000
+- model: regions.city
+  pk: 123
+  fields:
+    code: 086407000
+    name: City of Maasin
+    region_code: 080000000
+    province_code: 086400000
+- model: regions.city
+  pk: 124
+  fields:
+    code: 086408000
+    name: Macrohon
+    region_code: 080000000
+    province_code: 086400000
+- model: regions.city
+  pk: 125
+  fields:
+    code: 086409000
+    name: Malitbog
+    region_code: 080000000
+    province_code: 086400000
+- model: regions.city
+  pk: 126
+  fields:
+    code: 086410000
+    name: Padre Burgos
+    region_code: 080000000
+    province_code: 086400000
+- model: regions.city
+  pk: 127
+  fields:
+    code: 086411000
+    name: Pintuyan
+    region_code: 080000000
+    province_code: 086400000
+- model: regions.city
+  pk: 128
+  fields:
+    code: 086412000
+    name: Saint Bernard
+    region_code: 080000000
+    province_code: 086400000
+- model: regions.city
+  pk: 129
+  fields:
+    code: 086413000
+    name: San Francisco
+    region_code: 080000000
+    province_code: 086400000
+- model: regions.city
+  pk: 130
+  fields:
+    code: 086414000
+    name: San Juan
+    region_code: 080000000
+    province_code: 086400000
+- model: regions.city
+  pk: 131
+  fields:
+    code: 086415000
+    name: San Ricardo
+    region_code: 080000000
+    province_code: 086400000
+- model: regions.city
+  pk: 132
+  fields:
+    code: 086416000
+    name: Silago
+    region_code: 080000000
+    province_code: 086400000
+- model: regions.city
+  pk: 133
+  fields:
+    code: 086417000
+    name: Sogod
+    region_code: 080000000
+    province_code: 086400000
+- model: regions.city
+  pk: 134
+  fields:
+    code: 086418000
+    name: Tomas Oppus
+    region_code: 080000000
+    province_code: 086400000
+- model: regions.city
+  pk: 135
+  fields:
+    code: 086419000
+    name: Limasawa
+    region_code: 080000000
+    province_code: 086400000
+- model: regions.city
+  pk: 136
+  fields:
+    code: 087801000
+    name: Almeria
+    region_code: 080000000
+    province_code: 087800000
+- model: regions.city
+  pk: 137
+  fields:
+    code: 087802000
+    name: Biliran
+    region_code: 080000000
+    province_code: 087800000
+- model: regions.city
+  pk: 138
+  fields:
+    code: 087803000
+    name: Cabucgayan
+    region_code: 080000000
+    province_code: 087800000
+- model: regions.city
+  pk: 139
+  fields:
+    code: 087804000
+    name: Caibiran
+    region_code: 080000000
+    province_code: 087800000
+- model: regions.city
+  pk: 140
+  fields:
+    code: 087805000
+    name: Culaba
+    region_code: 080000000
+    province_code: 087800000
+- model: regions.city
+  pk: 141
+  fields:
+    code: 087806000
+    name: Kawayan
+    region_code: 080000000
+    province_code: 087800000
+- model: regions.city
+  pk: 142
+  fields:
+    code: 087807000
+    name: Maripipi
+    region_code: 080000000
+    province_code: 087800000
+- model: regions.city
+  pk: 143
+  fields:
+    code: 087808000
+    name: Naval
+    region_code: 080000000
+    province_code: 087800000
+

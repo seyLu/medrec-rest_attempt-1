@@ -1,0 +1,37 @@
+- model: regions.province
+  pk: 1
+  fields:
+    code: 082600000
+    name: Eastern Samar
+    region_code: 080000000
+- model: regions.province
+  pk: 2
+  fields:
+    code: 083700000
+    name: Leyte
+    region_code: 080000000
+- model: regions.province
+  pk: 3
+  fields:
+    code: 084800000
+    name: Northern Samar
+    region_code: 080000000
+- model: regions.province
+  pk: 4
+  fields:
+    code: 086000000
+    name: Samar
+    region_code: 080000000
+- model: regions.province
+  pk: 5
+  fields:
+    code: 086400000
+    name: Southern Leyte
+    region_code: 080000000
+- model: regions.province
+  pk: 6
+  fields:
+    code: 087800000
+    name: Biliran
+    region_code: 080000000
+

@@ -1,0 +1,6 @@
+- model: regions.region
+  pk: 1
+  fields:
+    code: 080000000
+    name: Eastern Visayas
+
