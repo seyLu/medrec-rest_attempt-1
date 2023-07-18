@@ -146,3 +146,4 @@ async def main():
 if __name__ == "__main__":
     fileConfig("logging.ini")
     asyncio.run(main())
+    logging.info("Succesfully generated regions fixture")
