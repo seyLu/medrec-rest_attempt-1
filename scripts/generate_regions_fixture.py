@@ -5,20 +5,10 @@
 2. create corresponding yaml fixtures
 
 pseudocode:
-get region 8
-take code
-
-get all provinces with code=<region_code>
-for each provinces
-    take code
-    get all cities-municipalities with code=<province_code>
-
-        for each cities-municipalities
-            take code
-                get all districts with code=<cities-municipalities_code>
-
-                for each district
-                take code
+get region viii
+get all provinces with region_code=<region_code>
+get all cities-municipalities with region_code=<region_code>
+get all districts with region_code=<region_code>
 """
 
 __author__ = "seyLu"
