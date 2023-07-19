@@ -7,8 +7,8 @@ class RegionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Region
         fields = [
-            "name",
             "code",
+            "name",
         ]
 
 
@@ -16,9 +16,9 @@ class ProvinceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Province
         fields = [
-            "region_code",
-            "name",
             "code",
+            "name",
+            "region_code",
         ]
 
 
@@ -26,9 +26,10 @@ class CitySerializer(serializers.ModelSerializer):
     class Meta:
         model = City
         fields = [
-            "province_code",
-            "name",
             "code",
+            "name",
+            "province_code",
+            "region_code",
         ]
 
 
@@ -36,7 +37,9 @@ class DistrictSerializer(serializers.ModelSerializer):
     class Meta:
         model = District
         fields = [
-            "city_code",
-            "name",
             "code",
+            "name",
+            "city_code",
+            "province_code",
+            "region_code"
         ]

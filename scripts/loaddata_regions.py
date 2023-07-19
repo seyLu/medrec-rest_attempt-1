@@ -25,14 +25,14 @@ LOADDATA_COMMAND = [
 
 
 def main():
-    loaddata(["region", "province", "city", "district"])
+    loaddata(["Region", "Province", "City", "District"])
 
 
-def loaddata(fixtures: str) -> None:
+def loaddata(fixtures: list[str], ext: str = "yaml") -> None:
     """Loads all fixtures in order."""
 
     for fixture in fixtures:
-        fixture = f"{fixture}.json"
+        fixture = f"{fixture}.{ext}"
         logging.info(f"Loading fixture {fixture}.")
 
         subprocess.call([*LOADDATA_COMMAND, os.path.join(FIXTURE_PATH, fixture)])
