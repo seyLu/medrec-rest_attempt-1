@@ -41,5 +41,5 @@ class DistrictSerializer(serializers.ModelSerializer):
             "name",
             "city_code",
             "province_code",
-            "region_code"
+            "region_code",
         ]
