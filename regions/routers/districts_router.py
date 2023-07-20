@@ -7,5 +7,5 @@ ROUTE_LOOKUP = "district"
 
 districts_router = DefaultRouter()
 districts_router.register(
-    ROUTE_NAME, views.DistrictListDetailViewSet, basename=ROUTE_NAME
+    ROUTE_NAME, views.DistrictListDetailViewSet, basename=f"{ROUTE_NAME}-list-detail"
 )

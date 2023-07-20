@@ -8,14 +8,16 @@ ROUTE_LOOKUP = "province"
 
 provinces_router = DefaultRouter()
 provinces_router.register(
-    ROUTE_NAME, views.ProvinceListDetailViewSet, basename=ROUTE_NAME
+    ROUTE_NAME, views.ProvinceListDetailViewSet, basename=f"{ROUTE_NAME}-list-detail"
 )
 
 provinces_nested_router = routers.NestedDefaultRouter(
     provinces_router, ROUTE_NAME, lookup=ROUTE_LOOKUP
 )
 
-provinces_nested_router.register(r"cities", views.CityListViewSet, basename="cities")
 provinces_nested_router.register(
-    r"districts", views.DistrictListViewSet, basename="districts"
+    r"cities", views.CityListViewSet, basename="cities-list"
+)
+provinces_nested_router.register(
+    r"districts", views.DistrictListViewSet, basename="districts-list"
 )

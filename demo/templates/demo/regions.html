@@ -1,0 +1,36 @@
+{% extends 'demo/layout.html' %}
+{% load static %}
+
+{% block title %}
+  Demo: Regions
+{% endblock %}
+
+{% block scripts %}
+  <script src="{% static 'demo/scripts/regions.js' %}" defer></script>
+{% endblock %}
+
+{% block main %}
+  <div class="mt-5 pt-5"></div>
+  <div class="container w-50 mt-5 pt-5">
+    <div class="row mx-auto mb-3">
+      <label class="col-2 me-3" for="regions-input">Regions:</label>
+      <input class="col" id="regions-input" list="regions-datalist">
+      <datalist id="regions-datalist"></datalist>
+    </div>
+    <div class="row mx-auto mb-3">
+      <label class="col-2 me-3" for="provinces-input">Provinces:</label>
+      <input class="col" id="provinces-input" list="provinces-datalist">
+      <datalist id="provinces-datalist"></datalist>
+    </div>
+    <div class="row mx-auto mb-3">
+      <label class="col-2 me-3" for="cities-input">Cities:</label>
+      <input class="col" id="cities-input" list="cities-datalist">
+      <datalist id="cities-datalist"></datalist>
+    </div>
+    <div class="row mx-auto mb-3">
+      <label class="col-2 me-3" for="districts-input">Districts:</label>
+      <input class="col" id="districts-input" list="districts-datalist">
+      <datalist id="districts-datalist"></datalist>
+    </div>
+  </div>
+{% endblock %}
