@@ -22,18 +22,23 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
+        pip install ruff
         pip install isort
         pip install black
         pip install mypy
 
-    - name: Check if need to sort imports
+    - name: Ruff Linter
       run: |
-        isort . --profile=black --quiet --diff --check
+        ruff check . --diff
 
-    - name: Check if need to format python code
+    - name: Isort
+      run: |
+        isort . --profile=black --diff --check
+
+    - name: Black Formatter
       run: |
         black . --diff --check
 
-    - name: Type Check
+    - name: Mypy Type Check
       run: |
         mypy . --install-types --non-interactive --ignore-missing-imports --exclude="(app|migrations)"
