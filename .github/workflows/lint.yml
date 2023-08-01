@@ -36,5 +36,4 @@ jobs:
 
     - name: Type Check
       run: |
-        mypy --install-types
-        mypy . --ignore-missing-imports --exclude "(app|migrations)"
+        mypy . --install-types --non-interactive --ignore-missing-imports --exclude="(app|migrations)"
