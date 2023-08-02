@@ -12,16 +12,16 @@ from .serializers import (
 
 
 class RegionListDetailViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Region.objects.filter()
+    queryset = Region.objects.all()
     serializer_class = RegionSerializer
 
     def list(self, request):
-        serializer = self.serializer_class(self.queryset, many=True)
+        serializer = self.get_serializer_class()(self.get_queryset(), many=True)
         return Response(serializer.data)
 
     def retrieve(self, request, pk=None):
-        region = get_object_or_404(self.queryset, code=pk)
-        serializer = self.serializer_class(region)
+        region = get_object_or_404(self.get_queryset(), code=pk)
+        serializer = self.get_serializer_class()(region)
         return Response(serializer.data)
 
 
@@ -30,20 +30,20 @@ class ProvinceListViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = ProvinceSerializer
 
     def list(self, request, region_pk=None):
-        qs = self.queryset.filter(region_code=region_pk)
-        serializer = self.serializer_class(qs, many=True)
+        qs = self.get_queryset().filter(region_code=region_pk)
+        serializer = self.get_serializer_class()(qs, many=True)
         return Response(serializer.data)
 
 
 class ProvinceListDetailViewSet(ProvinceListViewSet):
     def list(self, request):
-        serializer = self.serializer_class(self.queryset, many=True)
+        serializer = self.get_serializer_class()(self.get_queryset(), many=True)
         return Response(serializer.data)
 
     def retrieve(self, request, pk=None):
-        qs = self.queryset.filter(code=pk)
+        qs = self.get_queryset().filter(code=pk)
         province = get_object_or_404(qs, code=pk)
-        serializer = self.serializer_class(province)
+        serializer = self.get_serializer_class()(province)
         return Response(serializer.data)
 
 
@@ -55,23 +55,23 @@ class CityListViewSet(viewsets.ReadOnlyModelViewSet):
         parent_endpoint = request.get_full_path().split("/")[-4]
 
         if parent_endpoint == "regions":
-            qs = self.queryset.filter(region_code=region_pk)
+            qs = self.get_queryset().filter(region_code=region_pk)
         elif parent_endpoint == "provinces":
-            qs = self.queryset.filter(province_code=province_pk)
+            qs = self.get_queryset().filter(province_code=province_pk)
 
-        serializer = self.serializer_class(qs, many=True)
+        serializer = self.get_serializer_class()(qs, many=True)
         return Response(serializer.data)
 
 
 class CityListDetailViewSet(CityListViewSet):
     def list(self, request):
-        serializer = self.serializer_class(self.queryset, many=True)
+        serializer = self.get_serializer_class()(self.get_queryset(), many=True)
         return Response(serializer.data)
 
     def retrieve(self, request, pk=None):
-        qs = self.queryset.filter(code=pk)
+        qs = self.get_queryset().filter(code=pk)
         city = get_object_or_404(qs, code=pk)
-        serializer = self.serializer_class(city)
+        serializer = self.get_serializer_class()(city)
         return Response(serializer.data)
 
 
@@ -83,23 +83,23 @@ class DistrictListViewSet(viewsets.ReadOnlyModelViewSet):
         parent_endpoint = request.get_full_path().split("/")[-4]
 
         if parent_endpoint == "regions":
-            qs = self.queryset.filter(region_code=region_pk)
+            qs = self.get_queryset().filter(region_code=region_pk)
         elif parent_endpoint == "provinces":
-            qs = self.queryset.filter(province_code=province_pk)
+            qs = self.get_queryset().filter(province_code=province_pk)
         elif parent_endpoint == "cities":
-            qs = self.queryset.filter(city_code=city_pk)
+            qs = self.get_queryset().filter(city_code=city_pk)
 
-        serializer = self.serializer_class(qs, many=True)
+        serializer = self.get_serializer_class()(qs, many=True)
         return Response(serializer.data)
 
 
 class DistrictListDetailViewSet(DistrictListViewSet):
     def list(self, request):
-        serializer = self.serializer_class(self.queryset, many=True)
+        serializer = self.get_serializer_class()(self.get_queryset(), many=True)
         return Response(serializer.data)
 
     def retrieve(self, request, pk=None):
-        qs = self.queryset.filter(code=pk)
+        qs = self.get_queryset().filter(code=pk)
         district = get_object_or_404(qs, code=pk)
-        serializer = self.serializer_class(district)
+        serializer = self.get_serializer_class()(district)
         return Response(serializer.data)
