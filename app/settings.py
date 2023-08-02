@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # internal api
     "api",
     "regions",
+    "users",
     # internal apps
     "demo",
 ]
@@ -87,6 +88,10 @@ DATABASES = {
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+
+
+# custom user class
+AUTH_USER_MODEL = "users.User"
 
 
 # Password validation
