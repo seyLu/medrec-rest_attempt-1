@@ -41,4 +41,4 @@ jobs:
 
     - name: Mypy Type Check
       run: |
-        mypy . --install-types --non-interactive --ignore-missing-imports --exclude="(app|migrations)"
+        mypy . --install-types --non-interactive --check-untyped-defs --ignore-missing-imports
