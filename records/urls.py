@@ -15,7 +15,7 @@ urlpatterns = [
         name="record_update_history-list",
     ),
     path(
-        "record-history/<str:uuid>",
+        "record-histories/<str:uuid>",
         views.RecordUpdateHistoryDetailAPIView.as_view(),
         name="record_update_history-detail",
     ),
