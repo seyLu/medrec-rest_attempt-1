@@ -26,8 +26,8 @@ class Client(models.Model):
     age = models.IntegerField(max_length=3)
     school = models.CharField(max_length=255)
 
-    region = models.ForeignKey(Region, on_delete=models.CASCADE)
-    province = models.ForeignKey(Province, on_delete=models.CASCADE)
-    city = models.ForeignKey(City, on_delete=models.CASCADE)
-    district = models.ForeignKey(District, on_delete=models.CASCADE)
+    region = models.ForeignKey(Region, to_field="code", on_delete=models.CASCADE)
+    province = models.ForeignKey(Province, to_field="code", on_delete=models.CASCADE)
+    city = models.ForeignKey(City, to_field="code", on_delete=models.CASCADE)
+    district = models.ForeignKey(District, to_field="code", on_delete=models.CASCADE)
     street_address = models.CharField(max_length=255)
