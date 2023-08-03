@@ -1,3 +1,4 @@
+from django.core.validators import MaxLengthValidator, MinLengthValidator
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -10,7 +11,13 @@ class Client(models.Model):
         NONTEACHING_PERSONNEL = "NTP", _("Non-teaching Personnel")
         STUDENT = "STU", _("Student")
 
-    reference_number = models.IntegerField(max_length=12)
+    reference_number = models.IntegerField(
+        validators=[
+            MinLengthValidator(6),
+            MaxLengthValidator(12),
+        ],
+        unique=True,
+    )
     type = models.CharField(
         max_length=3,
         choices=ClientType.choices,
@@ -23,7 +30,12 @@ class Client(models.Model):
 
     first_name = models.CharField(max_length=32)
     last_name = models.CharField(max_length=32)
-    age = models.IntegerField(max_length=3)
+    age = models.IntegerField(
+        validators=[
+            MinLengthValidator(1),
+            MaxLengthValidator(3),
+        ]
+    )
     school = models.CharField(max_length=255)
 
     region = models.ForeignKey(Region, to_field="code", on_delete=models.CASCADE)
