@@ -13,3 +13,13 @@ class UserListCreateAPIView(generics.ListCreateAPIView):
         qs = self.get_queryset()
         serializer = self.get_serializer_class()(qs, many=True)
         return Response(serializer.data)
+
+
+class UserDetailApiView(generics.RetrieveAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+    def retrieve(self, request, pk=None):
+        qs = self.get_queryset().filter(uuid=pk)
+        serializer = self.get_serializer_class()(qs, many=True)
+        return Response(serializer.data)
