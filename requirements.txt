@@ -5,7 +5,7 @@ async-timeout==4.0.2
 attrs==23.1.0
 certifi==2023.7.22
 charset-normalizer==3.2.0
-Django==4.2.3
+Django==4.2.4
 django-extensions==3.2.3
 djangorestframework==3.14.0
 drf-nested-routers==0.93.4
