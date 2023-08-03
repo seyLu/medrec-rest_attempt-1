@@ -8,7 +8,7 @@ pseudocode:
 get region viii
 get all provinces with region_code=<region_code>
 get all cities-municipalities with region_code=<region_code>
-get all districts with region_code=<region_code>
+get all barangays with region_code=<region_code>
 """
 
 __author__ = "seyLu"
@@ -22,6 +22,8 @@ __status__ = "Prototype"
 import asyncio
 import logging
 import os
+import shutil
+from datetime import datetime
 from logging.config import fileConfig
 
 import aiohttp
@@ -32,6 +34,8 @@ CITY_OF_TACLOBAN_CODE: str = "083747000"
 
 BASE_URL: str = "https://psgc.gitlab.io/api"
 BASE_PATH: str = "fixtures"
+
+DATETIME_NOW: str = datetime.now().strftime("%Y%m%d%H%M%S")
 
 API_MAP: dict = {
     "regions": "regions",
@@ -115,7 +119,18 @@ class PsgcAPI:
             await self._get_fixtures(session), default_flow_style=False, sort_keys=False
         )
 
+    def _backup_yaml(self) -> None:
+        logging.info(f"Generating backup {self.yaml_filename}.bak")
+        dest: str = os.path.join(
+            "results", DATETIME_NOW, f"{self.yaml_filename.split('/')[-1]}.bak"
+        )
+        os.makedirs(os.path.dirname(dest), exist_ok=True)
+        shutil.copy2(self.yaml_filename, dest)
+
     async def generate_fixture(self, session) -> None:
+        if os.path.isfile(self.yaml_filename):
+            self._backup_yaml()
+
         with open(self.yaml_filename, "w+") as f:
             print(await self._get_yaml(session), file=f)
 
