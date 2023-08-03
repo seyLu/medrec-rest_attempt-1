@@ -22,5 +22,5 @@ class UserDetailApiView(generics.RetrieveAPIView):
 
     def retrieve(self, request, uuid=None):
         user = get_object_or_404(self.get_queryset(), uuid=uuid)
-        serializer = self.get_serializer_class()(user, many=True)
+        serializer = self.get_serializer_class()(user)
         return Response(serializer.data)
