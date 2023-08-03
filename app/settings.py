@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "rest_framework",
     # internal api
     "api",
+    "clients",
     "regions",
     "users",
     # internal apps
