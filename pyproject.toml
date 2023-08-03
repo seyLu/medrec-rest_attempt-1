@@ -19,6 +19,11 @@ unfixable = ["B"]
 "path/to/file.py" = ["E402"]
 
 
+[tool.isort]
+# Automatically apply black to isort.
+profile = "black"
+
+
 [tool.mypy]
 # Exclude type checking on files/dirs
 exclude = [

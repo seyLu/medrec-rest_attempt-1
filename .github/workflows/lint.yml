@@ -33,7 +33,7 @@ jobs:
 
     - name: Isort Import Sorter
       run: |
-        isort . --profile=black --diff --check
+        isort . --diff --check
 
     - name: Black Formatter
       run: |
