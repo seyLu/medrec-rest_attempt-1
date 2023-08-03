@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # internal api
     "api",
     "clients",
+    "records",
     "regions",
     "users",
     # internal apps
