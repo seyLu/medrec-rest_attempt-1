@@ -31,7 +31,7 @@ jobs:
       run: |
         ruff check . --diff
 
-    - name: Isort
+    - name: Isort Import Sorter
       run: |
         isort . --profile=black --diff --check
 
@@ -39,6 +39,6 @@ jobs:
       run: |
         black . --diff --check
 
-    - name: Mypy Type Check
+    - name: Mypy Type Checker
       run: |
         mypy . --install-types --non-interactive --check-untyped-defs --ignore-missing-imports
