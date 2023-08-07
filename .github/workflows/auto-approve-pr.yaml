@@ -1,0 +1,19 @@
+name: Auto-approve PR
+run-name: Checking if elegible for auto-approving PR
+
+on: pull_request
+
+jobs:
+  auto-approve:
+    name: Perform Auto-approve PR
+    runs-on: ubuntu-latest
+
+    permissions:
+      pull-requests: write
+
+    if: github.event.pull_request.user.login == ${{ github.repository_owner }}
+    steps:
+      - name: Auto-approve PR via seyLu Bot
+        uses: hmarr/auto-approve-action@v3
+        with:
+          github-token: ${{ secrets.SEYLUBOT_PAT }}
