@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-"""Automates loading of regions fixture."""
+"""Automates loading of all fixtures."""
 
 __author__ = "seyLu"
 __github__ = "github.com/seyLu"
@@ -10,11 +10,17 @@ __version__ = "0.0.1"
 __maintainer__ = "seyLu"
 __status__ = "Prototype"
 
-from lib.loaddata import loaddata
+import subprocess
+
+MODELS_IN_ORDER: list = [
+    "regions",
+    "users",
+]
 
 
 def main():
-    loaddata(["Region", "Province", "City", "District"])
+    for model in MODELS_IN_ORDER:
+        subprocess.call(["python", f"loaddata_{model}.py"])
 
 
 if __name__ == "__main__":

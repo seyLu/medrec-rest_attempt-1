@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-"""Automates loading of regions fixture."""
+"""Automates loading of users fixture."""
 
 __author__ = "seyLu"
 __github__ = "github.com/seyLu"
@@ -14,7 +14,7 @@ from lib.loaddata import loaddata
 
 
 def main():
-    loaddata(["Region", "Province", "City", "District"])
+    loaddata(["User"])
 
 
 if __name__ == "__main__":

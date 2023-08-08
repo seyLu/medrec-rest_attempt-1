@@ -10,7 +10,9 @@ from .managers import UserManager
 class User(AbstractUser):
     username = None
     email = models.EmailField(_("email address"), unique=True)
+    mobile_number = models.CharField(max_length=13, blank=True, unique=True)
     is_email_verified = models.BooleanField(default=False)
+    is_mobile_verified = models.BooleanField(default=False)
     uuid = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
 
     USERNAME_FIELD = "email"
