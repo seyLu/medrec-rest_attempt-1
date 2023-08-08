@@ -59,7 +59,7 @@ def _get_fixtures() -> list[dict]:
         is_email_verified: bool = fake.boolean(chance_of_getting_true=75)
         fixtures.append(
             {
-                "model": f"models.{MODEL_NAME}",
+                "model": f"users.{MODEL_NAME}",
                 "pk": pk,
                 "fields": {
                     "first_name": fake.first_name(),
