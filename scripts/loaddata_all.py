@@ -10,8 +10,10 @@ __version__ = "0.0.1"
 __maintainer__ = "seyLu"
 __status__ = "Prototype"
 
+import os
 import subprocess
 
+SCRIPTS_PATH: str = "scripts"
 MODELS_IN_ORDER: list = [
     "regions",
     "users",
@@ -20,7 +22,12 @@ MODELS_IN_ORDER: list = [
 
 def main():
     for model in MODELS_IN_ORDER:
-        subprocess.call(["python", f"loaddata_{model}.py"])
+        subprocess.call(
+            [
+                "python",
+                os.path.join("scripts", f"loaddata_{model}.py"),
+            ]
+        )
 
 
 if __name__ == "__main__":
