@@ -1,4 +1,4 @@
-- model: users.user
+- model: models.user
   pk: 1
   fields:
     first_name: Katherine
@@ -9,7 +9,7 @@
     is_mobile_verified: false
     is_active: true
     is_staff: true
-- model: users.user
+- model: models.user
   pk: 2
   fields:
     first_name: Vanessa
@@ -20,7 +20,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 3
   fields:
     first_name: Scott
@@ -31,7 +31,7 @@
     is_mobile_verified: false
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 4
   fields:
     first_name: James
@@ -42,7 +42,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 5
   fields:
     first_name: David
@@ -53,7 +53,7 @@
     is_mobile_verified: true
     is_active: false
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 6
   fields:
     first_name: Lori
@@ -64,7 +64,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 7
   fields:
     first_name: Brittany
@@ -75,7 +75,7 @@
     is_mobile_verified: true
     is_active: false
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 8
   fields:
     first_name: Jeffrey
@@ -86,7 +86,7 @@
     is_mobile_verified: false
     is_active: false
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 9
   fields:
     first_name: Catherine
@@ -97,7 +97,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 10
   fields:
     first_name: Christine
@@ -108,7 +108,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 11
   fields:
     first_name: Michael
@@ -119,7 +119,7 @@
     is_mobile_verified: false
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 12
   fields:
     first_name: Alexander
@@ -130,7 +130,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 13
   fields:
     first_name: Kathleen
@@ -141,7 +141,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 14
   fields:
     first_name: Jeffrey
@@ -152,7 +152,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 15
   fields:
     first_name: Cassandra
@@ -163,7 +163,7 @@
     is_mobile_verified: false
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 16
   fields:
     first_name: Leslie
@@ -174,7 +174,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 17
   fields:
     first_name: Courtney
@@ -185,7 +185,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 18
   fields:
     first_name: Erin
@@ -196,7 +196,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 19
   fields:
     first_name: Dillon
@@ -207,7 +207,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 20
   fields:
     first_name: Kelly
@@ -218,7 +218,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 21
   fields:
     first_name: Thomas
@@ -229,7 +229,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 22
   fields:
     first_name: Kara
@@ -240,7 +240,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 23
   fields:
     first_name: Garrett
@@ -251,7 +251,7 @@
     is_mobile_verified: false
     is_active: false
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 24
   fields:
     first_name: Wendy
@@ -262,7 +262,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 25
   fields:
     first_name: Erin
@@ -273,7 +273,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 26
   fields:
     first_name: Nancy
@@ -284,7 +284,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 27
   fields:
     first_name: Alexis
@@ -295,7 +295,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 28
   fields:
     first_name: Ronald
@@ -306,7 +306,7 @@
     is_mobile_verified: true
     is_active: false
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 29
   fields:
     first_name: Trevor
@@ -317,7 +317,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 30
   fields:
     first_name: Travis
@@ -328,7 +328,7 @@
     is_mobile_verified: false
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 31
   fields:
     first_name: Andrew
@@ -339,7 +339,7 @@
     is_mobile_verified: false
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 32
   fields:
     first_name: Sarah
@@ -350,7 +350,7 @@
     is_mobile_verified: false
     is_active: false
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 33
   fields:
     first_name: Stanley
@@ -361,7 +361,7 @@
     is_mobile_verified: false
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 34
   fields:
     first_name: Kimberly
@@ -372,7 +372,7 @@
     is_mobile_verified: false
     is_active: false
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 35
   fields:
     first_name: Lacey
@@ -383,7 +383,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 36
   fields:
     first_name: Maria
@@ -394,7 +394,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 37
   fields:
     first_name: Shawn
@@ -405,7 +405,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 38
   fields:
     first_name: Kyle
@@ -416,7 +416,7 @@
     is_mobile_verified: false
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 39
   fields:
     first_name: Phillip
@@ -427,7 +427,7 @@
     is_mobile_verified: false
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 40
   fields:
     first_name: Brian
@@ -438,7 +438,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 41
   fields:
     first_name: Haley
@@ -449,7 +449,7 @@
     is_mobile_verified: false
     is_active: false
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 42
   fields:
     first_name: Christopher
@@ -460,7 +460,7 @@
     is_mobile_verified: false
     is_active: false
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 43
   fields:
     first_name: Thomas
@@ -471,7 +471,7 @@
     is_mobile_verified: false
     is_active: false
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 44
   fields:
     first_name: Sean
@@ -482,7 +482,7 @@
     is_mobile_verified: false
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 45
   fields:
     first_name: Carlos
@@ -493,7 +493,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 46
   fields:
     first_name: Courtney
@@ -504,7 +504,7 @@
     is_mobile_verified: false
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 47
   fields:
     first_name: Lucas
@@ -515,7 +515,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 48
   fields:
     first_name: Michelle
@@ -526,7 +526,7 @@
     is_mobile_verified: true
     is_active: false
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 49
   fields:
     first_name: Steven
@@ -537,7 +537,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 50
   fields:
     first_name: Kristina
@@ -548,7 +548,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 51
   fields:
     first_name: Julia
@@ -559,7 +559,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 52
   fields:
     first_name: Tracy
@@ -570,7 +570,7 @@
     is_mobile_verified: false
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 53
   fields:
     first_name: Angela
@@ -581,7 +581,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 54
   fields:
     first_name: Christopher
@@ -592,7 +592,7 @@
     is_mobile_verified: false
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 55
   fields:
     first_name: Bradley
@@ -603,7 +603,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 56
   fields:
     first_name: Margaret
@@ -614,7 +614,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 57
   fields:
     first_name: Virginia
@@ -625,7 +625,7 @@
     is_mobile_verified: false
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 58
   fields:
     first_name: Corey
@@ -636,7 +636,7 @@
     is_mobile_verified: true
     is_active: false
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 59
   fields:
     first_name: Annette
@@ -647,7 +647,7 @@
     is_mobile_verified: true
     is_active: false
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 60
   fields:
     first_name: William
@@ -658,7 +658,7 @@
     is_mobile_verified: false
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 61
   fields:
     first_name: Lisa
@@ -669,7 +669,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 62
   fields:
     first_name: Denise
@@ -680,7 +680,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 63
   fields:
     first_name: Sherry
@@ -691,7 +691,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 64
   fields:
     first_name: Brian
@@ -702,7 +702,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 65
   fields:
     first_name: Ryan
@@ -713,7 +713,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 66
   fields:
     first_name: Robert
@@ -724,7 +724,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 67
   fields:
     first_name: Kristin
@@ -735,7 +735,7 @@
     is_mobile_verified: false
     is_active: false
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 68
   fields:
     first_name: Nicholas
@@ -746,7 +746,7 @@
     is_mobile_verified: true
     is_active: false
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 69
   fields:
     first_name: Alexis
@@ -757,7 +757,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 70
   fields:
     first_name: Joshua
@@ -768,7 +768,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 71
   fields:
     first_name: Linda
@@ -779,7 +779,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 72
   fields:
     first_name: Kelly
@@ -790,7 +790,7 @@
     is_mobile_verified: false
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 73
   fields:
     first_name: Renee
@@ -801,7 +801,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 74
   fields:
     first_name: Laura
@@ -812,7 +812,7 @@
     is_mobile_verified: false
     is_active: false
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 75
   fields:
     first_name: Latasha
@@ -823,7 +823,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 76
   fields:
     first_name: Tina
@@ -834,7 +834,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 77
   fields:
     first_name: Joel
@@ -845,7 +845,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 78
   fields:
     first_name: Travis
@@ -856,7 +856,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 79
   fields:
     first_name: Joshua
@@ -867,7 +867,7 @@
     is_mobile_verified: false
     is_active: false
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 80
   fields:
     first_name: Thomas
@@ -878,7 +878,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 81
   fields:
     first_name: Patricia
@@ -889,7 +889,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 82
   fields:
     first_name: James
@@ -900,7 +900,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 83
   fields:
     first_name: Krystal
@@ -911,7 +911,7 @@
     is_mobile_verified: true
     is_active: false
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 84
   fields:
     first_name: Christopher
@@ -922,7 +922,7 @@
     is_mobile_verified: false
     is_active: false
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 85
   fields:
     first_name: Bradley
@@ -933,7 +933,7 @@
     is_mobile_verified: false
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 86
   fields:
     first_name: Emily
@@ -944,7 +944,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 87
   fields:
     first_name: Richard
@@ -955,7 +955,7 @@
     is_mobile_verified: false
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 88
   fields:
     first_name: Cody
@@ -966,7 +966,7 @@
     is_mobile_verified: false
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 89
   fields:
     first_name: Ethan
@@ -977,7 +977,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 90
   fields:
     first_name: Michael
@@ -988,7 +988,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 91
   fields:
     first_name: William
@@ -999,7 +999,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 92
   fields:
     first_name: Jay
@@ -1010,7 +1010,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 93
   fields:
     first_name: Cesar
@@ -1021,7 +1021,7 @@
     is_mobile_verified: false
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 94
   fields:
     first_name: Amanda
@@ -1032,7 +1032,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 95
   fields:
     first_name: Robert
@@ -1043,7 +1043,7 @@
     is_mobile_verified: false
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 96
   fields:
     first_name: Mark
@@ -1054,7 +1054,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 97
   fields:
     first_name: Anthony
@@ -1065,7 +1065,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 98
   fields:
     first_name: Anthony
@@ -1076,7 +1076,7 @@
     is_mobile_verified: true
     is_active: true
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 99
   fields:
     first_name: Duane
@@ -1087,7 +1087,7 @@
     is_mobile_verified: false
     is_active: false
     is_staff: false
-- model: users.user
+- model: models.user
   pk: 100
   fields:
     first_name: Janet

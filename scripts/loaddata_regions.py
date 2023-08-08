@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-"""Automates loading of regions fixture."""
+"""Automates loading of Fixtures."""
 
 __author__ = "seyLu"
 __github__ = "github.com/seyLu"
@@ -10,12 +10,34 @@ __version__ = "0.0.1"
 __maintainer__ = "seyLu"
 __status__ = "Prototype"
 
-from lib.loaddata import loaddata
+import logging
+import os
+import subprocess
+from logging.config import fileConfig
+
+FIXTURE_PATH = "fixtures/"
+
+LOADDATA_COMMAND = [
+    "python",
+    "manage.py",
+    "loaddata",
+]
 
 
 def main():
     loaddata(["Region", "Province", "City", "District"])
 
 
+def loaddata(fixtures: list[str], ext: str = "yaml") -> None:
+    """Loads all fixtures in order."""
+
+    for fixture in fixtures:
+        fixture = f"{fixture}.{ext}"
+        logging.info(f"Loading fixture {fixture}.")
+
+        subprocess.call([*LOADDATA_COMMAND, os.path.join(FIXTURE_PATH, fixture)])
+
+
 if __name__ == "__main__":
+    fileConfig("logging.ini")
     main()

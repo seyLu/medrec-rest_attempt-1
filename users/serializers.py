@@ -10,9 +10,7 @@ class UserSerializer(serializers.ModelSerializer):
             "id",
             "uuid",
             "email",
-            "mobile_number",
             "is_email_verified",
-            "is_mobile_verified",
             "is_active",
             "is_staff",
         ]
