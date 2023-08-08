@@ -28,14 +28,19 @@ YAML_FILENAME: str = f"{MODEL_NAME.upper()}.yaml"
 
 
 def main():
-    fake = Faker(["en_PH"])
-    Faker.seed(0)
+    generate_fixture()
 
+
+def generate_fixture() -> None:
+    _get_yaml()
+
+
+def _get_yaml() -> None:
     logging.info(f"Generating {YAML_FILENAME}")
     with open(f"{BASE_PATH}/User.yaml", "w+") as f:
         print(
             yaml.dump(
-                get_users_fixture(fake),
+                _get_fixtures(),
                 default_flow_style=False,
                 sort_keys=False,
             ),
@@ -43,8 +48,12 @@ def main():
         )
 
 
-def get_users_fixture(fake: Faker) -> list[dict]:
+def _get_fixtures() -> list[dict]:
     logging.info(f"Serializing fixture {MODEL_NAME}")
+
+    fake = Faker(["en_PH"])
+    Faker.seed(0)
+
     fixtures: list[dict] = []
     for pk in range(1, 101):
         is_email_verified: bool = fake.boolean(chance_of_getting_true=75)
