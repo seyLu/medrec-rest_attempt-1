@@ -14,6 +14,6 @@ jobs:
     if: github.event.pull_request.user.login == ${{ github.repository_owner }}
     steps:
       - name: Auto-approve PR via seyLu Bot
-        uses: hmarr/auto-approve-action@v3
+        uses: hmarr/auto-approve-action@05117a7ec2883d5c9a48de532442e96d57ae12f6 # v3
         with:
           github-token: ${{ secrets.SEYLUBOT_PAT }}
