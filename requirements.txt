@@ -9,6 +9,7 @@ distlib==0.3.7
 Django==4.2.4
 django-extensions==3.2.3
 djangorestframework==3.14.0
+djangorestframework-simplejwt==5.2.2
 drf-nested-routers==0.93.4
 Faker==19.3.0
 filelock==3.12.2
@@ -20,6 +21,7 @@ nodeenv==1.8.0
 phonenumbers==8.13.18
 platformdirs==3.10.0
 pre-commit==3.3.3
+PyJWT==2.8.0
 python-dateutil==2.8.2
 python-dotenv==1.0.0
 pytz==2023.3
