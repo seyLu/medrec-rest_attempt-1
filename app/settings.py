@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "rest_framework_simplejwt",
     # internal api
     "api",
+    "auth.apps.AuthConfig",
     "clients",
     "records",
     "regions",
