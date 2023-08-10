@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from rest_framework.exceptions import ValidationError
 
 from users.models import User
 
@@ -17,3 +18,9 @@ class LoginSerializer(serializers.ModelSerializer):
             "password",
         ]
         extra_kwargs = {"password": {"write_only": True}}
+
+    def validate(self, attrs):
+        unknown = set(self.initial_data) - set(self.fields)
+        if unknown:
+            raise ValidationError("Unknown field(s): {}".format(", ".join(unknown)))
+        return attrs

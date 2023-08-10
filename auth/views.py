@@ -1,5 +1,5 @@
 from django.contrib.auth import authenticate
-from rest_framework import serializers, status
+from rest_framework.exceptions import AuthenticationFailed
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -19,28 +19,19 @@ class RegisterAPIView(APIView):
 
 class LoginAPIView(APIView):
     serializer_class = LoginSerializer
-    permission_classes = [AllowAny]
     authentication_classes = []
+    permission_classes = [AllowAny]
 
     def post(self, request):
         serializer = self.serializer_class(data=request.data)
-
-        if not serializer.is_valid():
-            return Response(
-                {
-                    "status": status.HTTP_400_BAD_REQUEST,
-                    "message": "Bad Request",
-                    "data": serializer.errors,
-                },
-                status.HTTP_400_BAD_REQUEST,
-            )
+        serializer.is_valid(raise_exception=True)
 
         email = serializer.validated_data["email"]
         password = serializer.validated_data["password"]
 
         user = authenticate(request, email=email, password=password)
         if user is None:
-            raise serializers.ValidationError({"detail": "Invalid Email or Password!"})
+            raise AuthenticationFailed({"detail": "Invalid Email or Password!"})
 
         refresh = RefreshToken.for_user(user)
         return Response(
