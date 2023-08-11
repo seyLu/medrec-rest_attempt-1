@@ -1,10 +1,11 @@
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, logout
+from rest_framework.authentication import BasicAuthentication, SessionAuthentication
 from rest_framework.exceptions import AuthenticationFailed
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from auth.serializers import LoginSerializer, RegisterSerializer
+from auth.serializers import LoginSerializer, LogoutSerializer, RegisterSerializer
 
 
 class RegisterAPIView(APIView):
@@ -39,4 +40,10 @@ class LoginAPIView(APIView):
 
 
 class LogoutAPIView(APIView):
-    pass
+    serializer_class = LogoutSerializer
+    authentication_classes = [SessionAuthentication, BasicAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        logout(request)
+        return Response({"message": "Successfully logged out!"})
