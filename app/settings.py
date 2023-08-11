@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "rest_framework",
     # internal api
     "api",
+    "auth.apps.AuthConfig",
     "clients",
     "records",
     "regions",
