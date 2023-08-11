@@ -65,6 +65,12 @@ def _get_fixtures() -> list[dict]:
                     "first_name": fake.first_name(),
                     "last_name": fake.last_name(),
                     "email": fake.ascii_safe_email(),
+                    "password": fake.password(
+                        length=8,
+                        special_chars=False,
+                        upper_case=False,
+                        digits=False,
+                    ),
                     "mobile_number": phonenumbers.format_number(
                         phonenumbers.parse(fake.mobile_number(), "PH"),
                         phonenumbers.PhoneNumberFormat.E164,

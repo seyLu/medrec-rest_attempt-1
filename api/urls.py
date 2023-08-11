@@ -4,6 +4,7 @@ from . import views
 
 urlpatterns = [
     path("", views.api_home),
+    path("", include("auth.urls")),
     path("", include("clients.urls")),
     path("", include("records.urls")),
     path("", include("regions.urls")),

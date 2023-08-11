@@ -39,6 +39,7 @@ exclude = [
     "routers",
 
     # TOML literal string (single-quotes, no escaping necessary)
+    '/admin\.py$',
     '/managers\.py$',
     '/models\.py$',
     '/serializers\.py$',
