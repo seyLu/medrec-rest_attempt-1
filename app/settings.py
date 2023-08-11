@@ -162,5 +162,5 @@ SIMPLE_JWT = {
 
 
 CORS_ALLOWED_ORIGINS = [
-    "localhost:8000",
+    "http://localhost:3000",
 ]
