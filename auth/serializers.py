@@ -24,3 +24,7 @@ class LoginSerializer(serializers.ModelSerializer):
         if unknown:
             raise ValidationError("Unknown field(s): {}".format(", ".join(unknown)))
         return attrs
+
+
+class LogoutSerializer(serializers.ModelSerializer):
+    pass
