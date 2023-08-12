@@ -17,7 +17,12 @@ class RegisterAPIView(APIView):
         serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        return Response(serializer.data)
+        return Response(
+            {
+                "user": serializer.data,
+                "message": "Successfuly registered user.",
+            }
+        )
 
 
 class LoginAPIView(APIView):
