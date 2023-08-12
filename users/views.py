@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404
 from rest_framework import generics
 from rest_framework.authentication import BasicAuthentication, SessionAuthentication
-from rest_framework.permissions import AllowAny, IsAdminUser, IsAuthenticated
+from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from rest_framework.response import Response
 
 from .models import User
@@ -30,10 +30,3 @@ class UserDetailAPIView(generics.RetrieveAPIView):
         user = get_object_or_404(self.get_queryset(), uuid=uuid)
         serializer = self.get_serializer_class()(user)
         return Response(serializer.data)
-
-
-class UserCreateAPIView(generics.CreateAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-    authentication_classes = []
-    permission_classes = [AllowAny]
