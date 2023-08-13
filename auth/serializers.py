@@ -5,9 +5,9 @@ from users.models import User
 
 
 class RegisterSerializer(serializers.ModelSerializer):
-    email = serializers.EmailField()
-    password = serializers.CharField()
-    re_password = serializers.CharField()
+    email = serializers.EmailField(required=True)
+    password = serializers.CharField(write_only=True, required=True)
+    re_password = serializers.CharField(write_only=True, required=True)
 
     class Meta:
         model = User
@@ -16,11 +16,14 @@ class RegisterSerializer(serializers.ModelSerializer):
             "password",
             "re_password",
         ]
-        extra_kwargs = {"password": {"write_only": True}}
+        extra_kwargs = {
+            "password": {"write_only": True},
+            "re_password": {"write_only": True},
+        }
 
     def validate(self, attrs):
         unknown = set(self.initial_data) - set(self.fields)
-        if unknown:
+        if unknown and not self.initial_data["csrfmiddlewaretoken"]:
             raise ValidationError("Unknown field(s): {}".format(", ".join(unknown)))
 
         if attrs["password"] != attrs["re_password"]:
@@ -48,10 +51,6 @@ class LoginSerializer(serializers.ModelSerializer):
 
     def validate(self, attrs):
         unknown = set(self.initial_data) - set(self.fields)
-        if unknown:
+        if unknown and not self.initial_data["csrfmiddlewaretoken"]:
             raise ValidationError("Unknown field(s): {}".format(", ".join(unknown)))
         return attrs
-
-
-class LogoutSerializer(serializers.ModelSerializer):
-    pass

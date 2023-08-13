@@ -1,28 +1,20 @@
-from django.contrib.auth import authenticate, logout
+from django.contrib.auth import authenticate, login, logout
+from django.shortcuts import redirect
+from django.urls import reverse
 from rest_framework.authentication import BasicAuthentication, SessionAuthentication
 from rest_framework.exceptions import AuthenticationFailed
+from rest_framework.generics import CreateAPIView
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from auth.serializers import LoginSerializer, LogoutSerializer, RegisterSerializer
+from auth.serializers import LoginSerializer, RegisterSerializer
 
 
-class RegisterAPIView(APIView):
+class RegisterAPIView(CreateAPIView):
     serializer_class = RegisterSerializer
     authentication_classes = []
     permission_classes = [AllowAny]
-
-    def post(self, request):
-        serializer = self.serializer_class(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
-        return Response(
-            {
-                "user": serializer.data,
-                "message": "Successfuly registered user.",
-            }
-        )
 
 
 class LoginAPIView(APIView):
@@ -41,11 +33,11 @@ class LoginAPIView(APIView):
         if user is None:
             raise AuthenticationFailed({"detail": "Invalid Email or Password!"})
 
-        return Response({"email": email, "message": "Succesfully logged in."})
+        login(request, user)
+        return redirect(reverse("user-detail", args=[str(user.uuid)]))
 
 
 class LogoutAPIView(APIView):
-    serializer_class = LogoutSerializer
     authentication_classes = [SessionAuthentication, BasicAuthentication]
     permission_classes = [IsAuthenticated]
 
