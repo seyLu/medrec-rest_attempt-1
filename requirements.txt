@@ -13,7 +13,7 @@ drf-nested-routers==0.93.4
 Faker==19.3.0
 filelock==3.12.2
 frozenlist==1.4.0
-identify==2.5.26
+identify==2.5.27
 idna==3.4
 multidict==6.0.4
 nodeenv==1.8.0
