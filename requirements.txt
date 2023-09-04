@@ -19,7 +19,7 @@ multidict==6.0.4
 nodeenv==1.8.0
 phonenumbers==8.13.19
 platformdirs==3.10.0
-pre-commit==3.3.3
+pre-commit==3.4.0
 python-dateutil==2.8.2
 python-dotenv==1.0.0
 pytz==2023.3
