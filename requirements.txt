@@ -10,7 +10,7 @@ Django==4.2.5
 django-extensions==3.2.3
 djangorestframework==3.14.0
 drf-nested-routers==0.93.4
-Faker==19.6.1
+Faker==19.6.2
 filelock==3.12.4
 frozenlist==1.4.0
 identify==2.5.29
