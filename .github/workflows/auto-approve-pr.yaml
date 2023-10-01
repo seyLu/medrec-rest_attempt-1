@@ -14,11 +14,11 @@ jobs:
     if: github.event.pull_request.user.login == ${{ github.repository_owner }}
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@394d78e5b40cc35c170eb909b1f81551f37feb05 # v2.5.0
+        uses: step-security/harden-runner@398bb08048482c421b1da00a58a1b472a306eb85 # v2.5.0
         with:
           egress-policy: audit
 
       - name: Auto-approve PR via seyLu Bot
-        uses: hmarr/auto-approve-action@05117a7ec2883d5c9a48de532442e96d57ae12f6 # v3.2.1
+        uses: hmarr/auto-approve-action@134e1011866211ab5b452c8ab06ea0447e888610 # v3.2.1
         with:
           github-token: ${{ secrets.SEYLUBOT_PAT }}
