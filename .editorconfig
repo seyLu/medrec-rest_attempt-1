@@ -14,12 +14,12 @@ insert_final_newline = true
 charset = utf-8
 
 # 2 space indentation
-[*.json, *.html]
+[*.{json,yaml,html}]
 indent_style = space
 indent_size = 2
 
 # 4 space indentation
-[*.py]
+[*.{py,js}]
 indent_style = space
 indent_size = 4
 

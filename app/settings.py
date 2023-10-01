@@ -40,8 +40,10 @@ INSTALLED_APPS = [
     # third party packages
     "django_extensions",
     "rest_framework",
+    "django_htmx",
     # internal api
     "api",
+    "auth.apps.AuthConfig",
     "clients",
     "records",
     "regions",
@@ -58,6 +60,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django_htmx.middleware.HtmxMiddleware",
 ]
 
 ROOT_URLCONF = "app.urls"

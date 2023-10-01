@@ -39,9 +39,17 @@ exclude = [
     "routers",
 
     # TOML literal string (single-quotes, no escaping necessary)
+    '/admin\.py$',
     '/managers\.py$',
     '/models\.py$',
     '/serializers\.py$',
     '/urls\.py$',
     '/views\.py$',
 ]
+
+[tool.djlint]
+profile = "django"
+indent = 2
+use_gitignore = true
+max_blank_lines = 1
+ignore = "T002"

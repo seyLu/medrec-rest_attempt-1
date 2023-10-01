@@ -8,7 +8,7 @@ from .models import User
 from .serializers import UserSerializer
 
 
-class UserListCreateAPIView(generics.ListCreateAPIView):
+class UserListAPIView(generics.ListAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     authentication_classes = [SessionAuthentication, BasicAuthentication]
@@ -19,11 +19,11 @@ class UserListCreateAPIView(generics.ListCreateAPIView):
         return Response(serializer.data)
 
 
-class UserDetailApiView(generics.RetrieveAPIView):
+class UserDetailAPIView(generics.RetrieveAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     authentication_classes = [SessionAuthentication, BasicAuthentication]
-    permission_classes = [IsAuthenticated, IsAdminUser]
+    permission_classes = [IsAuthenticated]
     lookup_field = "uuid"
 
     def retrieve(self, request, uuid=None):
