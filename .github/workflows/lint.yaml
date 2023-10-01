@@ -42,7 +42,6 @@ jobs:
           ruff
           black
           mypy
-          django-stubs[compatible-mypy]
 
       - name: Ruff Linter
         run: ruff check . --diff

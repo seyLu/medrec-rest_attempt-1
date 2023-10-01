@@ -46,12 +46,6 @@ exclude = [
     '/urls\.py$',
     '/views\.py$',
 ]
-plugins = ["mypy_django_plugin.main"]
-
-
-[tool.django-stubs]
-django_settings_module = "app.settings"
-
 
 [tool.djlint]
 profile = "django"
