@@ -2,12 +2,10 @@ from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect
 from django.urls import reverse
 from rest_framework.authentication import BasicAuthentication, SessionAuthentication
-from rest_framework.exceptions import AuthenticationFailed
 from rest_framework.generics import CreateAPIView
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
-
 from auth.serializers import LoginSerializer, RegisterSerializer
 
 
@@ -31,7 +29,7 @@ class LoginAPIView(APIView):
 
         user = authenticate(request, email=email, password=password)
         if user is None:
-            raise AuthenticationFailed({"detail": "Invalid Email or Password!"})
+            return Response({"detail": "Invalid Email or Password!"}, status=400)
 
         login(request, user)
         return redirect(reverse("user-detail", args=[str(user.uuid)]))

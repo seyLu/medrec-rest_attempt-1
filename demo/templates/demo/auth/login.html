@@ -1,0 +1,33 @@
+{% extends 'demo/layout.html' %}
+{% load static %}
+
+{% block title %}
+  Demo: Login
+{% endblock title %}
+
+{% block scripts %}
+  <script src="{% static 'demo/scripts/htmx.min.js' %}" defer></script>
+{% endblock scripts %}
+
+{% block main %}
+  <form hx-post="{% url 'login' %}" hx-target="#loginError">
+    {% csrf_token %}
+    <div class="mt-5 pt-5"></div>
+    <div class="container w-50 mt-5 pt-5">
+      <div id="loginError" hx-swap-oob="true"></div>
+      <div class="row mx-auto mb-3">
+        <label class="col-2 me-3" for="email">Email</label>
+        <input class="col"
+               type="email"
+               id="email"
+               name="email"
+               placeholder="user@email.com">
+      </div>
+      <div class="row mx-auto mb-3">
+        <label class="col-2 me-3" for="password">Password</label>
+        <input class="col" type="password" id="password" name="password" placeholder="******">
+      </div>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+{% endblock main %}
