@@ -4,7 +4,7 @@ asgiref==3.7.2
 async-timeout==4.0.3
 attrs==23.1.0
 cfgv==3.4.0
-charset-normalizer==3.2.0
+charset-normalizer==3.3.0
 distlib==0.3.7
 Django==4.2.5
 django-extensions==3.2.3
