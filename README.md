@@ -1,29 +1,34 @@
-# medrec
-Description:
+# medrec-rest_attempt-1
+
+### Description:
+
 REST API of a prototype for a Medical Record system
 
-Attempt 1
+### Attempt 1
 
-Stack used:
-Django
-Django REST Framework
-DRF nested routers
-Bootstrap 5  # for demo
+### Stack used:
 
-Tech explored:
-HTMX
-JWT
-OAuth
-aiohttp
-Faker
+- Django
+- Django REST Framework
+- DRF nested routers
+- Bootstrap 5  <samp># for demo purposes</samp>
 
-Tools explored:
-pre-commit
-djlint
-django-stubs  # end up not using
+### Tech explored:
 
-Archive reason:
-I want to rebuild this using Django + HTMX + Tailwind + Alpine.js(optional) 
+- HTMX
+- JWT
+- OAuth
+- aiohttp
+- Faker
+
+### Tools explored:
+
+- pre-commit
+- djlint
+- django-stubs  <samp># end up not using</samp>
+
+### Archive reason:
+I want to rebuild this using Django + HTMX + Tailwind + Alpine.js(optional)
 DRF is good and all but I would really like to explore HTMX
 which currently doesn't really work well with DRF
 since DRF returns JSON, while HTMX wants an HTML response
